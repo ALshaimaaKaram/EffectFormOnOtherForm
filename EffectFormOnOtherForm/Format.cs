@@ -44,23 +44,26 @@ namespace EffectFormOnOtherForm
 
         private void btnApply_Click(object sender, EventArgs e)
         {
+            //editFormat.cmboxFont.SelectedItem;
             //EditFormat editFormat = ((EditFormat)sender);
+            System.Drawing.FontStyle newFontStyle = FontStyle.Regular;
 
             if (editFormat.Bold)
             {
-                txtFormat.Font = new Font(editFormat.FontFamily, editFormat.FontSize, FontStyle.Bold);
+                newFontStyle |= FontStyle.Bold;
             }
 
             if (editFormat.Italic)
             {
-                txtFormat.Font = new Font(editFormat.FontFamily, editFormat.FontSize, FontStyle.Italic);
+                newFontStyle |= FontStyle.Italic;
             }
 
             if (editFormat.UnderLine)
             {
-                txtFormat.Font = new Font(editFormat.FontFamily, editFormat.FontSize, FontStyle.Underline);
+                newFontStyle |= FontStyle.Underline;
             }
 
+            txtFormat.Font = new Font(editFormat.FontFamily, editFormat.FontSize, newFontStyle);
             txtFormat.ForeColor = editFormat.Color;
             //editFormat.Close();
         }

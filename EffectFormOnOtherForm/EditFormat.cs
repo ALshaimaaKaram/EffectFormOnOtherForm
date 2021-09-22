@@ -16,7 +16,7 @@ namespace EffectFormOnOtherForm
         public string FontFamily
         {
             get { return cmboxFont.SelectedItem.ToString(); }
-            set { cmboxFont.SelectedItem = value; }
+            //set { cmboxFont.SelectedItem = value; }
         }
         public int FontSize
         {
@@ -27,23 +27,12 @@ namespace EffectFormOnOtherForm
 
         public Color Color
         {
-            get { return color; }
+            get 
+            {   
+                return color; 
+            }
             set
             {
-                if (rdoCustom.Checked)
-                {
-                    ColorDialog dlg = new ColorDialog();
-
-                    if (dlg.ShowDialog() == DialogResult.OK)
-                    {
-                        value = dlg.Color;
-                    }
-                }
-                if (rdoBlue.Checked)
-                    value = Color.Blue;
-                if (rdoRed.Checked)
-                    value = Color.Red;
-
                 color = value;
             }
         }
