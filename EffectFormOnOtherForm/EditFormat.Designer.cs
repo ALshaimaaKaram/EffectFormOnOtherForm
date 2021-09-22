@@ -112,7 +112,7 @@ namespace EffectFormOnOtherForm
             this.numUpDSize.Size = new System.Drawing.Size(120, 23);
             this.numUpDSize.TabIndex = 3;
             this.numUpDSize.Value = new decimal(new int[] {
-            5,
+            10,
             0,
             0,
             0});
@@ -156,9 +156,9 @@ namespace EffectFormOnOtherForm
             this.rdoRed.Name = "rdoRed";
             this.rdoRed.Size = new System.Drawing.Size(45, 19);
             this.rdoRed.TabIndex = 1;
-            this.rdoRed.TabStop = true;
             this.rdoRed.Text = "Red";
             this.rdoRed.UseVisualStyleBackColor = true;
+            this.rdoRed.CheckedChanged += new System.EventHandler(this.rdoRed_CheckedChanged);
             // 
             // rdoCustom
             // 
@@ -180,6 +180,7 @@ namespace EffectFormOnOtherForm
             this.rdoBlue.TabIndex = 0;
             this.rdoBlue.Text = "Blue";
             this.rdoBlue.UseVisualStyleBackColor = true;
+            this.rdoBlue.CheckedChanged += new System.EventHandler(this.rdoBlue_CheckedChanged);
             // 
             // btnApply
             // 

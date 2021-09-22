@@ -28,16 +28,14 @@ namespace EffectFormOnOtherForm
 
         public Color Color
         {
-            get 
-            {   
-                return color; 
-            }
-            set
-            {
-                color = value;
-            }
+            get
+            { return color; }
+            //set
+            //{
+            //    color = value;
+            //}
         }
-        
+
 
         public bool Bold 
         { 
@@ -57,6 +55,24 @@ namespace EffectFormOnOtherForm
             //set { }
         }
 
+        //public bool Red
+        //{
+        //    get { return rdoRed.Checked; }
+        //    //set { }
+        //}
+
+        //public bool Blue
+        //{
+        //    get { return rdoBlue.Checked; }
+        //    //set { }
+        //}
+
+        //public bool Custom
+        //{
+        //    get { return rdoCustom.Checked; }
+        //    //set { }
+        //}
+
         public Button Button
         {
             get { return btnApply; }
@@ -73,25 +89,35 @@ namespace EffectFormOnOtherForm
 
         private void rdoCustom_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdoCustom.Checked)
+
+            ColorDialog dlg = new ColorDialog();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
             {
-                ColorDialog dlg = new ColorDialog();
-
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    Color = dlg.Color;
-                }
+                color = dlg.Color;
             }
-            if (rdoBlue.Checked)
-                Color = Color.Blue;
-            if (rdoRed.Checked)
-                Color = Color.Red;
-
         }
+
+            //if (rdoBlue.Checked)
+            //    color = Color.Blue;
+            //if (rdoRed.Checked)
+            //    color = Color.Red;
+
+        
 
         private void cmboxFont_SelectedIndexChanged(object sender, EventArgs e)
         {
             fontFamily = cmboxFont.Text;
+        }
+
+        private void rdoRed_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.Red;
+        }
+
+        private void rdoBlue_CheckedChanged(object sender, EventArgs e)
+        {
+            color = Color.Blue;
         }
     }
 }
