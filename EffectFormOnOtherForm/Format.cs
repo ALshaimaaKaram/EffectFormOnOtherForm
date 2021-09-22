@@ -46,7 +46,9 @@ namespace EffectFormOnOtherForm
         {
             //editFormat.cmboxFont.SelectedItem;
             //EditFormat editFormat = ((EditFormat)sender);
+            //mybox.Font = new Font("Chiller", 12);
             System.Drawing.FontStyle newFontStyle = FontStyle.Regular;
+           string fontFamily = editFormat.FontFamily;
 
             if (editFormat.Bold)
             {
@@ -63,7 +65,7 @@ namespace EffectFormOnOtherForm
                 newFontStyle |= FontStyle.Underline;
             }
 
-            txtFormat.Font = new Font(editFormat.FontFamily, editFormat.FontSize, newFontStyle);
+            txtFormat.Font = new Font(fontFamily, editFormat.FontSize, newFontStyle);
             txtFormat.ForeColor = editFormat.Color;
             //editFormat.Close();
         }

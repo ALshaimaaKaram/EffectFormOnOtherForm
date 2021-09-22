@@ -13,9 +13,10 @@ namespace EffectFormOnOtherForm
     public partial class EditFormat : Form
     {
         private Color color;
+        private string fontFamily;
         public string FontFamily
         {
-            get { return cmboxFont.SelectedItem.ToString(); }
+            get { return fontFamily; }
             //set { cmboxFont.SelectedItem = value; }
         }
         public int FontSize
@@ -86,6 +87,11 @@ namespace EffectFormOnOtherForm
             if (rdoRed.Checked)
                 Color = Color.Red;
 
+        }
+
+        private void cmboxFont_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fontFamily = cmboxFont.Text;
         }
     }
 }

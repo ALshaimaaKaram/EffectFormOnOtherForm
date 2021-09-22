@@ -70,6 +70,7 @@ namespace EffectFormOnOtherForm
             this.cmboxFont.Name = "cmboxFont";
             this.cmboxFont.Size = new System.Drawing.Size(121, 23);
             this.cmboxFont.TabIndex = 5;
+            this.cmboxFont.SelectedIndexChanged += new System.EventHandler(this.cmboxFont_SelectedIndexChanged);
             // 
             // ckboxItalic
             // 
